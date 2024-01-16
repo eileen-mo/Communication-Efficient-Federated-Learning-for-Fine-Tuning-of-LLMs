@@ -1,14 +1,17 @@
-# CS6220 Fall 2023 Group 17
-# FedKDLora - Communication-Efficient Federated Learning for Fine Tuning Large Language Models
+# FedKDLora: Communication-Efficient Federated Learning for Fine Tuning LLM
+This project explores the integration of Knowledge Distillation and Low-Rank Adaptation (LoRA) within a federated learning setup to fine-tune large language models with reduced communication cost.
 
-## Prerequisites
-1. We ran our experiments on 4 RTX 6000 GPUs.
-1. Python3.9+
-1. `pip install -r requirements.txt`
+## Environment & Prerequisites
+- 4 × RTX 6000 GPUs
+- Python 3.9+
+- Install dependencies:
+  ```bash
+  pip install -r requirements.txt
 
+## Experiment Workflow
 ## Steps to run
-### Run teacher pre-training
-To give the teacher some advantage, we first let the teacher pre-train on the public dataset.
+### 1. Pre-train the Teacher Model
+We first fine-tuned the teacher model on a public subset of the dataset to give it an initial performance edge.
 ```bash
 PYTHONPATH=. python3 baselines/ft.py --teacher_ckpt bert-base-uncased --data_name cola --teacher_data_pct 20 --teacher_pretrain_epochs 5
 ```
@@ -18,7 +21,7 @@ For SST2:
 ```bash
 PYTHONPATH=. python3 baselines/ft.py --teacher_ckpt bert-base-uncased --data_name sst2 --teacher_data_pct 20 --teacher_pretrain_epochs 3
 ```
-### Run FL scheme
+### 2. Run Our FL Scheme (FedKDLora)
 
 For running 4 clients:
 ```bash
@@ -29,13 +32,17 @@ source multigpu/run-kd-lora.sh 4 --teacher_ckpt results/model/bert-base-uncased_
 ```
 Results are stored in `results/*.json`.
 
-### Baselines
+### 3. Baselines for Comparison
 ```bash
 # FedLoRA (FedAvg with LoRA)
 source multigpu/run-lora.sh 4 --data_name cola
 # FedAvg
 source multigpu/run.sh 4 --data_name cola
 ```
+## Datasets
+We used datasets within the [`GLUE` benchmark](https://gluebenchmark.com/).
+### [`SST2`](https://huggingface.co/datasets/glue/viewer/sst2)
+[`SST2`](https://huggingface.co/datasets/glue/viewer/sst2) is a sentiment classification dataset. Each sample contains a sentence and the corresponding sentiment label. It contains 67k training samples and 1.6k testing samples.
 
 ## Packages used
 ### Huggingface
@@ -50,13 +57,13 @@ We used [Huggingface](https://huggingface.co/) libraries, all of which are writt
 ### PyTorch
 We use [PyTorch](https://pytorch.org/) (220k LOC) for model training. Written in C++ with Python bindings. [Github](https://github.com/pytorch/pytorch)
 
-## Datasets
-We used datasets within the [`GLUE` benchmark](https://gluebenchmark.com/).
-### [`SST2`](https://huggingface.co/datasets/glue/viewer/sst2)
-[`SST2`](https://huggingface.co/datasets/glue/viewer/sst2) is a sentiment classification dataset. Each sample contains a sentence and the corresponding sentiment label. It contains 67k training samples and 1.6k testing samples.
-
 ### [`CoLA`](https://huggingface.co/datasets/glue/viewer/cola)
 [`CoLA`](https://huggingface.co/datasets/glue/viewer/cola) is a test of grammatical correctness. Each sample contains a sentence and whether it is grammatically correct. It contains 9k training samples and 1k testing samples.
 
-## Performance measurement
+## Metrics
 We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss with respect to the test dataset at every communication round. We also time the total runtime of each scheme.
+
+## Project Timeline
+Sep 2023 – Jan 2024
+
+> This repository is part of a group project completed for CS6220.
