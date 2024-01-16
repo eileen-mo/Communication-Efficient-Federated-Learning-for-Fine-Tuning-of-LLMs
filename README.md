@@ -71,13 +71,13 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 Individual Model Comparison
 ## Result
 Individual Model Comparison  
-<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Individual Model Comparison.png">
+<img width="854" alt="Individual_Model_Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Individual_Model_Comparison.png">
 
 Easy Case  
-<img width="854" alt="Easy Case" src=<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Easy Case.png">
+<img width="854" alt="Easy_Case" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Easy_Case.png">
 
 Hard Case  
-<img width="854" alt="Hard Case" src=<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Hard Case.png"
+<img width="854" alt="Hard_Case" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Hard_Case.png"
 
 
 ## Key Observations
@@ -88,4 +88,4 @@ Hard Case
 ## Note
 > This repository is part of a group project completed for Georgia Tech **CS6220: Big Data Systems & Analytics** (Fall 2023).  
 > Shared code and core documents were collaboratively developed by the team.  
-> This repository reflects my personal understanding and organization of the project, including selective highlights, documentation, and key observations.
+> This repository reflects my personal understanding and organization of the project, including selective highlights, documentation, and key observations.sr
