@@ -8,6 +8,12 @@ This project explores the integration of Knowledge Distillation and Low-Rank Ada
   ```bash
   pip install -r requirements.txt
 
+## System Architecture
+
+Below is the system design diagram, worked with during the model integration phase. Each client trains a student model with LoRA, and the server coordinates knowledge transfer from a pre-trained teacher.
+
+![System Flow](./images/System Flow.png)
+
 ## Experiment Workflow
 ### 1. Pre-train the Teacher Model
 We first fine-tuned the teacher model on a public subset of the dataset to give it an initial performance edge.
@@ -58,14 +64,25 @@ We used [Huggingface](https://huggingface.co/) libraries, all of which are writt
 ### PyTorch
 We use [PyTorch](https://pytorch.org/) (220k LOC) for model training. Written in C++ with Python bindings. [Github](https://github.com/pytorch/pytorch)
 
-## Metrics
+## Performance Metrics
 We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss with respect to the test dataset at every communication round. We also time the total runtime of each scheme.
 
-## Demo Presentation Slides
+## Result
+Individual Model Comparison
+![Individual Model Comparison](./images/Individual Model Comparison.png)
 
-You can view the demo presentation [here](./Slide.pdf).
+Easy Case
+![Easy Case](./images/Easy Case.png)
 
-## Project Timeline
-Sep 2023 – Jan 2024
+Hard Case 
+![Hard Case](./images/Hard Case.png)
 
-> This repository is part of a group project completed for Georgia Tech CS6220.
+## Key Observations
+- FedKDLoRA performs better than FedLoRA on CoLA dataset in early rounds but flattens later.
+- On SST2, FedKDLoRA consistently shows higher stability across different LoRA ranks.
+- Runtime increases with LoRA rank, but marginal gains in accuracy diminish after R=16.
+
+## Note
+> This repository is part of a group project completed for Georgia Tech **CS6220: Big Data Systems & Analytics** (Fall 2023).  
+> Shared code and core documents were collaboratively developed by the team.  
+> This repository reflects my personal understanding and organization of the project, including selective highlights, documentation, and key observations.
