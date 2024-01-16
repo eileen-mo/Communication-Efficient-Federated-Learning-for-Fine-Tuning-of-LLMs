@@ -61,7 +61,11 @@ We use [PyTorch](https://pytorch.org/) (220k LOC) for model training. Written in
 ## Metrics
 We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss with respect to the test dataset at every communication round. We also time the total runtime of each scheme.
 
+## Demo Presentation Slides
+
+You can view the demo presentation [here](./Slide.pdf).
+
 ## Project Timeline
 Sep 2023 – Jan 2024
 
-> This repository is part of a group project completed for CS6220.
+> This repository is part of a group project completed for Georgia Tech CS6220.
