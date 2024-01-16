@@ -1,4 +1,4 @@
-# FedKDLora: Communication-Efficient Federated Learning for Fine Tuning LLM
+# Communication-Efficient Federated Learning for Fine Tuning LLM
 This project explores the integration of Knowledge Distillation and Low-Rank Adaptation (LoRA) within a federated learning setup to fine-tune large language models with reduced communication cost.
 
 ## Environment & Prerequisites
@@ -9,7 +9,6 @@ This project explores the integration of Knowledge Distillation and Low-Rank Ada
   pip install -r requirements.txt
 
 ## Experiment Workflow
-## Steps to run
 ### 1. Pre-train the Teacher Model
 We first fine-tuned the teacher model on a public subset of the dataset to give it an initial performance edge.
 ```bash
@@ -43,6 +42,8 @@ source multigpu/run.sh 4 --data_name cola
 We used datasets within the [`GLUE` benchmark](https://gluebenchmark.com/).
 ### [`SST2`](https://huggingface.co/datasets/glue/viewer/sst2)
 [`SST2`](https://huggingface.co/datasets/glue/viewer/sst2) is a sentiment classification dataset. Each sample contains a sentence and the corresponding sentiment label. It contains 67k training samples and 1.6k testing samples.
+### [`CoLA`](https://huggingface.co/datasets/glue/viewer/cola)
+[`CoLA`](https://huggingface.co/datasets/glue/viewer/cola) is a test of grammatical correctness. Each sample contains a sentence and whether it is grammatically correct. It contains 9k training samples and 1k testing samples.
 
 ## Packages used
 ### Huggingface
@@ -56,9 +57,6 @@ We used [Huggingface](https://huggingface.co/) libraries, all of which are writt
 
 ### PyTorch
 We use [PyTorch](https://pytorch.org/) (220k LOC) for model training. Written in C++ with Python bindings. [Github](https://github.com/pytorch/pytorch)
-
-### [`CoLA`](https://huggingface.co/datasets/glue/viewer/cola)
-[`CoLA`](https://huggingface.co/datasets/glue/viewer/cola) is a test of grammatical correctness. Each sample contains a sentence and whether it is grammatically correct. It contains 9k training samples and 1k testing samples.
 
 ## Metrics
 We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss with respect to the test dataset at every communication round. We also time the total runtime of each scheme.
