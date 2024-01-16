@@ -12,7 +12,7 @@ This project explores the integration of Knowledge Distillation and Low-Rank Ada
 
 Below is the system design diagram, worked with during the model integration phase. Each client trains a student model with LoRA, and the server coordinates knowledge transfer from a pre-trained teacher.
 
-![System Flow](./images/System Flow.png)
+![System Flow](./Images/System Flow.png)
 
 ## Experiment Workflow
 ### 1. Pre-train the Teacher Model
@@ -69,13 +69,13 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 
 ## Result
 Individual Model Comparison
-![Individual Model Comparison](./images/Individual Model Comparison.png)
+![Individual Model Comparison](./Images/Individual Model Comparison.png)
 
 Easy Case
-![Easy Case](./images/Easy Case.png)
+![Easy Case](./Images/Easy Case.png)
 
 Hard Case 
-![Hard Case](./images/Hard Case.png)
+![Hard Case](./Images/Hard Case.png)
 
 ## Key Observations
 - FedKDLoRA performs better than FedLoRA on CoLA dataset in early rounds but flattens later.
