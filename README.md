@@ -69,9 +69,16 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 
 ## Result
 Individual Model Comparison
-![Individual Model Comparison](./images/Individual_Model_Comparison.png)
-![Easy Case](./images/Easy_Case.png)
-![Hard Case](./images/Hard_Case.png)
+## Result
+Individual Model Comparison  
+<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Individual Model Comparison.png">
+
+Easy Case  
+<img width="854" alt="Easy Case" src=<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Easy Case.png">
+
+Hard Case  
+<img width="854" alt="Hard Case" src=<img width="854" alt="Individual Model Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Hard Case.png"
+
 
 ## Key Observations
 - FedKDLoRA performs better than FedLoRA on CoLA dataset in early rounds but flattens later.
