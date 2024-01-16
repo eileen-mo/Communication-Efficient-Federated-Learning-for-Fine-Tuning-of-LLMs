@@ -10,8 +10,7 @@ This project explores the integration of Knowledge Distillation and Low-Rank Ada
 
 ## System Architecture
 Below is the system design diagram, worked with during the model integration phase. Each client trains a student model with LoRA, and the server coordinates knowledge transfer from a pre-trained teacher.
-<img width="854" alt="System Flow" src="https://github.com/user-attachments/assets/796c2c57-3b71-4a7f-81b3-82d851bef5b4" />
-
+<img width="854" height="636" alt="System Flow" src="https://github.com/user-attachments/assets/fad31587-237d-4eb9-9dfe-f9f4c3c2e4fb" />
 
 ## Experiment Workflow
 ### 1. Pre-train the Teacher Model
@@ -68,15 +67,16 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 
 
 ## Result
-### Individual Model Comparison  
-<img width="854" alt="Individual Model Comparison" src="https://github.com/user-attachments/assets/2f0db985-38b6-4688-8b0e-1ac4106c9fd5" />
+Individual Model Comparison
+## Result
+Individual Model Comparison  
+<img width="854" alt="Individual Model Comparison" src="https://github.com/user-attachments/assets/7866f2ca-a7a5-4d96-9c63-07c0c798391a" />
 
-### Easy Case  
-<img width="854" height="548" alt="Esay Case" src="https://github.com/user-attachments/assets/36381e23-b1f1-4164-a880-c88aef1a0ec7" />
+Easy Case  
+<img width="854" alt="Esay Case" src="https://github.com/user-attachments/assets/4a91d785-5eb6-492f-9e73-0dd06b44943d" />
 
-### Hard Case  
-<img width="854" alt="Hard Case" src="https://github.com/user-attachments/assets/95bdf11b-5f7e-4986-af90-db81a220a3ee" />
-
+Hard Case  
+<img width="854" alt="Hard Case" src="https://github.com/user-attachments/assets/4ce8003c-17e3-4916-8a55-6ca7f520b9e2" />
 
 ## Key Observations
 - FedKDLoRA performs better than FedLoRA on CoLA dataset in early rounds but flattens later.
