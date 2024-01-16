@@ -69,13 +69,9 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 
 ## Result
 Individual Model Comparison
-![Individual Model Comparison](./Images/Individual Model Comparison.png)
-
-Easy Case
-![Easy Case](./Images/Easy Case.png)
-
-Hard Case 
-![Hard Case](./Images/Hard Case.png)
+![Individual Model Comparison](./images/Individual_Model_Comparison.png)
+![Easy Case](./images/Easy_Case.png)
+![Hard Case](./images/Hard_Case.png)
 
 ## Key Observations
 - FedKDLoRA performs better than FedLoRA on CoLA dataset in early rounds but flattens later.
