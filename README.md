@@ -9,10 +9,9 @@ This project explores the integration of Knowledge Distillation and Low-Rank Ada
   pip install -r requirements.txt
 
 ## System Architecture
-
 Below is the system design diagram, worked with during the model integration phase. Each client trains a student model with LoRA, and the server coordinates knowledge transfer from a pre-trained teacher.
+<img width="854" alt="System Flow" src="https://github.com/user-attachments/assets/796c2c57-3b71-4a7f-81b3-82d851bef5b4" />
 
-![System Flow](./Images/System Flow.png)
 
 ## Experiment Workflow
 ### 1. Pre-train the Teacher Model
@@ -70,13 +69,13 @@ We evaluate all the schemes (FedAvg, FedLora, FedKDLora) via accuracy and loss w
 
 ## Result
 ### Individual Model Comparison  
-<img width="854" alt="Individual_Model_Comparison" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Individual_Model_Comparison.png">
+<img width="854" alt="Individual Model Comparison" src="https://github.com/user-attachments/assets/2f0db985-38b6-4688-8b0e-1ac4106c9fd5" />
 
 ### Easy Case  
-<img width="854" alt="Easy_Case" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Easy_Case.png">
+<img width="854" height="548" alt="Esay Case" src="https://github.com/user-attachments/assets/36381e23-b1f1-4164-a880-c88aef1a0ec7" />
 
 ### Hard Case  
-<img width="854" alt="Hard_Case" src="https://github.com/eileen-mo/Communication-Efficient-Federated-Learning-for-Fine-Tuning-of-LLMs/images/Hard_Case.png">
+<img width="854" alt="Hard Case" src="https://github.com/user-attachments/assets/95bdf11b-5f7e-4986-af90-db81a220a3ee" />
 
 
 ## Key Observations
